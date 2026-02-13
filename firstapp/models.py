@@ -25,7 +25,7 @@ class Cuisine(models.Model):
     
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=30, unique_for_date='publish')
+    # slug = models.SlugField(max_length=30, unique_for_date='publish')
     status = models.CharField(max_length=10,
                              choices=STATUS_CHOICES,
                              default='draft')
