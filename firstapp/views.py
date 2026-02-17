@@ -9,8 +9,8 @@ def home(request):
 def Cuisine_list(request):
     objlist = Cuisine.objects.all()
     paginator = Paginator(objlist,2)  # 2 items in each page
-    page = request.GET.get('page',1)
-    print(page)
+    page = request.GET.get('page')
+
     try:
         cuisines = paginator.page(page)
      
