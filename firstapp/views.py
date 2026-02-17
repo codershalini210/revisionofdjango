@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_list_or_404
+from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from .models import Cuisine
 # Create your views here.
@@ -10,7 +10,8 @@ def Cuisine_list(request):
     context = {'cuisines':cuisines}
     return render(request,"firstapp/cuisine_list.html",context)
 def Cuisine_detail(request,pk):
-    cuisine_selected = get_list_or_404(Cuisine,pk=pk,status='published')
+    cuisine_selected = get_object_or_404(Cuisine,pk=pk,status='published')
+    
     context = {'cuisine': cuisine_selected}
-    print(cuisine_selected)
+    
     return render(request,'firstapp/cuisine_details.html',context)
