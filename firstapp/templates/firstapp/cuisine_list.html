@@ -1,4 +1,5 @@
 {% extends "firstapp/base.html" %}
+
 {% block content %}
 <h1>Cuisine App Sample</h1>
 {% for cuisine in cuisines%}
@@ -10,4 +11,7 @@
     catgory : {{cuisine.catg}}</p>
     {{cuisine.status}}
 {% endfor %}
+
+{% include "pagination.html" with page=cuisines %}
+</div>
 {% endblock %}
