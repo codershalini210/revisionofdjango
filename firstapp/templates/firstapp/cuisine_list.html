@@ -1,0 +1,12 @@
+{% extends "firstapp/base.html" %}
+{% block content %}
+<h1>Cuisine App Sample</h1>
+{% for cuisine in cuisines%}
+{{cuisine.id}}
+<h2>{{cuisine.name}}</h2>    
+<p>Published On: {{cuisine.created}}</p>
+<p>type  :{{cuisine.type}}
+    catgory : {{cuisine.catg}}</p>
+    {{cuisine.status}}
+{% endfor %}
+{% endblock %}
