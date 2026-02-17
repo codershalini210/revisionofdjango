@@ -1,7 +1,8 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-from .models import Cuisine
+from .models import Cuisine,Products
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import ListView
 # Create your views here.
 def home(request):
     return HttpResponse("welcome to home of first app ")
@@ -26,3 +27,7 @@ def Cuisine_detail(request,pk):
     context = {'cuisine': cuisine_selected}
     
     return render(request,'firstapp/cuisine_details.html',context)
+
+class ProductListView(ListView):
+    model = Products
+    template_name = "firstapp/product_list.html"
